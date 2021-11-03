@@ -55,6 +55,7 @@
 
 .nav-sx h4 {
     flex-grow: 2;
+    font-weight: 400;
 }
 .nav-sx .icon-container {
     flex-grow: 1;
@@ -88,6 +89,21 @@
     font-size: 14px;
 }
 
+.filter-panel{
+    padding: 5px 10px;
+}
+.filter-input{
+    padding: 5px 10px;
+    background-color: white;
+}
+.search-icon{
+    padding: 0 15px;
+    padding-left: 10px;
+}
+
+.user-chat-preview{
+    padding: 0 10px;
+}
 /*****UTILITIES*****/
 .p-relative{
     position: relative;

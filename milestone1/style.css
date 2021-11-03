@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -11,8 +12,7 @@
     height: 100vh;
     position: relative;
     
-    background-color: rgb(127, 177, 221);
-    z-index: -1;
+    background-color: lightpink;
 }
 
 .bg-top{
@@ -25,7 +25,7 @@
 
 .content-container{
     min-height: 200px;
-    width: 960px;
+    width: 65%;
     margin: auto;
     margin-top: 50px;
     background-color: honeydew;
@@ -62,8 +62,30 @@
 }
 .nav-sx i{
     font-size: 20px;
-    padding: 5px;
+    padding: 9px;
     text-align: right;
+}
+
+.notification-panel {
+    align-items: center;
+    height: 70px;
+    padding: 13px;
+    background-color: rgb(127, 177, 221);
+}
+.notification-panel i {
+    font-size: 20px;
+    color: rgb(127, 177, 221);
+    background-color: rgba(255, 255, 255, 0.911);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.notification-text{
+    padding-left: 15px;
+    flex-grow: 1;
+}
+.notification-text:last-child{
+    font-size: 14px;
 }
 
 /*****UTILITIES*****/
@@ -105,4 +127,19 @@
 
 .m-bot-header{
     margin-bottom: 15px;
+}
+
+.text-l-grey{
+    color: lightgrey;
+}
+.text-grey{
+    color: grey;
+}
+
+.text-white{
+    color: white;
+}
+
+.text-red{
+    color: red ;
 }

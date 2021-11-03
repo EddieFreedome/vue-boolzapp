@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Boolzapp</title>
 </head>
@@ -16,17 +17,33 @@
             <!-- Contenuto schermata -->
             <div class="content-container">
                 <!-- Container SX -->
-                <div class="container-left">
-                    <nav>
+                <div class="container-left col-4 d-flex">
+                    <!-- nav utente -->
+                    <nav class="nav-sx d-flex">
+                        <div class="avatar-container">
+                            <img src="img/avatar_1.jpg" alt="user-avatar">
+                        </div>
+                        <h4><strong>Nome Utente</strong></h4>
+                        <div class="icon-container">
+                            <i class="fas fa-sync"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </nav>
-                    <div class="notifies-panel"></div>
+
+                    <!-- pannello notifiche -->
+                    <div class="notification-panel d-flex">
+                        <div class="notification-icon-container">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                    </div>
                     <div class="filter-panel"></div>
                     <div class="chat-preview">
                         <div class="user-chat-preview"></div>
                     </div>
                 </div>
                 <!-- Container DX -->
-                <div class="container-right">
+                <div class="container-right col-8">
                     <nav></nav>
                     <div class="chat-container">
                         <div class="messages-sent"></div>

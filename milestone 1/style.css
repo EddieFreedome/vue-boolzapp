@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*****UTILITIES*****/
+.p-relative{
+    position: relative;
+}
+
+.p-absolute{
+    position: absolute;
+}
+
+.col-4{
+    width: calc(100% /5 * 4);
+}
+
+.col-1{
+    width: calc(100% /5 * 1);
+}
+
+.d-flex{
+    display: flex;
+}
+
+.d-inline-block{
+    display: inline-block;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.m-bot-25{
+    margin-bottom: 50px;
+}
+
+.m-bot-header{
+    margin-bottom: 15px;
+}

@@ -5,7 +5,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
+.content-container{
+    z-index: 3;
+}
 
 .main-container{
     width: 100%;
@@ -20,14 +22,14 @@
     background-color: green;
     height: 10vh;
     width: 100%;
-    z-index: -1;
+    z-index: 0;
 }
 
 .content-container{
     min-height: 200px;
     width: 65%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 50px;/*da verificare margine superiore.. staccare solo container, non tutto*/
     background-color: whitesmoke;
 }
 
@@ -37,7 +39,6 @@
 }
 
 .nav-sx {
-    height: 100%;
     align-items: center;
     padding: 10px;
 }
@@ -54,15 +55,15 @@
 
 }
 
-.nav-sx h4 {
+.nav-sx h4, .nav-dx h4 {
     flex-grow: 2;
     font-weight: 400;
 }
-.nav-sx .icon-container {
+.nav-sx .icon-container, .nav-dx .icon-container {
     flex-grow: 1;
     color: lightgrey;
 }
-.nav-sx i{
+.nav-sx i, .nav-dx i{
     font-size: 20px;
     padding: 9px;
     text-align: right;
@@ -131,7 +132,6 @@
 }
 
 .user-chat-preview {
-    height: 100%;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -167,6 +167,21 @@
     top: 10px;
     right: 10px;
 }
+
+/*FINE SX*/
+
+/*INIZIO DX*/
+
+.container-right{
+    flex-direction: column;
+}
+
+.nav-dx{
+    padding: 10px;
+    align-items: center;
+    
+}
+
 /*****UTILITIES*****/
 .p-relative{
     position: relative;

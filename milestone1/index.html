@@ -100,22 +100,43 @@
                 </div>
                 <!-- Container DX -->
                 <div class="container-right col-8">
-                    <div class="nav-dx d-flex">
+                    <!-- Nav superiore -->
+                    <nav class="nav-dx d-flex">
                         <div class="avatar-container">
                             <img src="img/avatar_io.jpg" alt="user-avatar">
                         </div>
-                        <h4>Nome Utente</h4>
+                        <div class="text-preview-container p-relative">
+                            <h4>Nome Utente</h4>
+                            <p class="text-small text-grey">Ultimo accesso oggi 20/1/2020 Ore 8.33:30</p>
+                        </div>
                         <div class="icon-container text-right">
-                            <i class="fas fa-sync"></i>
-                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
-                    </div>
+                    </nav>
+
+                    <!-- CHAT CONTAINER -->
                     <div class="chat-container">
-                        <div class="messages-sent"></div>
-                        <div class="messages-received"></div>
+                        <div class="message-container-sent d-flex">
+                            <div class="messages sent d-flex">
+                                <p>Hai portato a spasso il cane?</p>
+                                <p class="text-ultra-small text-l-grey text-right">20/1/2020 Ore 8.33:30</p>
+                            </div>
+                        </div>
+
+                        <div class="message-container-received d-flex">
+                            <div class="messages received d-flex">
+                                <p>Hai portato a spasso il cane?</p>
+                                <p class="text-ultra-small text-l-grey text-right">20/1/2020 Ore 8.33:30</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="user-input-chat"></div>
+                    <div class="user-input-chat d-flex">
+                        <i class="far fa-smile text-grey"></i>
+                        <input type="text">
+                        <i class="fas fa-microphone text-grey"></i>
+                    </div>
                 </div>
             </div>
         </div>

@@ -53,9 +53,10 @@
                     <!-- Container globale Anteprime chat -->
                     <div class="chat-preview">
                         <!-- Singolo container singola anteprima chat -->
-                        <div class="user-chat-preview d-flex p-relative">
+                        <div class="user-chat-preview d-flex p-relative"
+                            v-for="contatto in contacts">
                             <div class="avatar-preview">
-                                <img src="img/avatar_1.jpg" alt="user-avatar">
+                                <img :src="img/avatar_1.jpg" alt="user-avatar">
                             </div>
                             <div class="text-preview-container p-relative">
                                 <h3>Nome Utente</h3>

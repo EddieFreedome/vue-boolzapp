@@ -261,13 +261,22 @@ padding-bottom: 5px;
 .user-input-chat{
     align-items: center;
     height: 60px;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: space-around;
+    padding: 15px 25px;
     background-color: rgb(236, 229, 221);
 }
 
 .user-input-chat i {
-    font-size: 20px;
+    font-size: 25px;
+    flex-grow: 1;
+}
+
+.user-input-chat input{
+    padding: 10px;
+    border-radius: 5px;
+    border-color: none;
+    flex-grow: 1;
+    width: 85%;
 }
 
 /*****UTILITIES*****/

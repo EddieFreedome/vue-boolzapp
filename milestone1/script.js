@@ -103,9 +103,9 @@ const vm = new Vue({
             visible: true,
             messages: [
             {
-            date: '10/01/2020 15:30:55',
-            text: 'Lo sai che ha aperto una nuova pizzeria?',
-            status: 'sent'
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
             },
             {
             date: '10/01/2020 15:50:00',
@@ -114,6 +114,32 @@ const vm = new Vue({
             }
             ],
             },
-        ]
+        ],
+        activeChat: {},
+        newMessage: "",
+        filterText: "",
+    },
+    methods: {
+        
+        getFilteredData() {
+            if (!this.filterText) {
+              return this.contacts;
+            }
+            return this.contacts.filter((contact) => {
+                // nome dell'utente attuale contiene il testo ricercato
+                return contact.name
+                  .toLowerCase()
+                  .includes(this.filterText.toLowerCase().trim());
+              });
+        }
+    
+    
+    
+    
+    
+    
+    
+    
     }
+
   })

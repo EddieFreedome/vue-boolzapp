@@ -47,26 +47,24 @@
                             <div class="search-icon">
                                 <i class="fas fa-search"></i>
                             </div>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" v-model="filterText" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
                     <!-- Container globale Anteprime chat -->
                     <div class="chat-preview">
                         <!-- Singolo container singola anteprima chat -->
                         <div class="user-chat-preview d-flex p-relative"
-                            v-for="contatto in contacts">
+                            v-for="contatto in getFilteredData()"
+                            @click="onChatClick(chat)">
                             <div class="avatar-preview">
                                 <img :src="'img/avatar' + contatto.avatar + '.jpg'" alt="user-avatar">
                             </div>
                             <div class="text-preview-container p-relative">
-                                <h3>Nome Utente</h3>
-                                <p class="text-small text-l-grey">Tutto fatto</p>
+                                <h3>{{contatto.name}}</h3>
+                                <p class="text-small text-l-grey">{{contatto.messages[contatto.messages.length - 1].text}}</p>
                             </div>
-                            <p class="text-small text-l-grey p-absolute">10/1/2020 16:15:22</p>
+                            <p class="text-small text-l-grey p-absolute">{{contatto.messages[contatto.messages.length - 1].date}}</p>
                         </div>
-
-                        
-                        
                     </div>
                 </div>
                 <!-- Container DX -->

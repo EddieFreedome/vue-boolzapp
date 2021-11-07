@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Boolzapp</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="main-container" id="root">
+            <!-- sfondo bg -->
+            <div class="bg-top"></div>
+            <!-- Contenuto schermata -->
+            <div class="content-container d-flex p-relative">
+                <!-- Container SX -->
+                <div class="container-left col-4 d-flex">
+                    <!-- nav utente -->
+                    <nav class="nav-sx d-flex">
+                        <div class="avatar-container">
+                            <img src="img/avatar_io.jpg" alt="user-avatar">
+                        </div>
+                        <h4>Nome Utente</h4>
+                        <div class="icon-container text-right">
+                            <i class="fas fa-sync"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </nav>
+
+                    <!-- pannello notifiche -->
+                    <div class="notification-panel d-flex">
+                        <div class="notification-icon-container">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="notification-text">
+                            <h4>Ricevi notifiche di nuovi messaggi</h4>
+                            <a href="#" class="text-grey">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <div class="filter-panel">
+                        <div class="filter-input d-flex">
+                            <div class="search-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <input type="text" v-model="filterText" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+                    <!-- Container globale Anteprime chat -->
+                    <div class="chat-preview">
+                        <!-- Singolo container singola anteprima chat -->
+                        <div class="user-chat-preview d-flex p-relative"
+                            v-for="contatto in getFilteredData()"
+                            @click="onChatClick(contatto)">
+                            <div class="avatar-preview">
+                                <img :src="createImgPath(contatto.avatar)" alt="user-avatar">
+                            </div>
+                            <div class="text-preview-container p-relative">
+                                <h3>{{contatto.name}}</h3>
+                                <p class="text-small text-l-grey">{{getLastMessage(contatto.messages)}}</p>
+                            </div>
+                            <p class="text-small text-l-grey p-absolute">{{contatto.messages[contatto.messages.length - 1].date}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Container DX -->
+                <div class="container-right col-8 d-flex">
+                    <!-- Nav superiore -->
+                    <nav class="nav-dx d-flex">
+                        <div class="avatar-container">
+                            <img :src="createImgPath(activeChat.avatar)" alt="user-avatar">
+                        </div>
+                        <div class="text-preview-container p-relative">
+                            <h4>{{activeChat.name}}</h4>
+                            <p class="text-small text-grey">Ultimo accesso il...</p>
+                        </div>
+                        <div class="icon-container text-right">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </nav>
+
+                    <!-- CHAT CONTAINER -->
+                    <div class="chat-container d-flex">
+                        
+                        
+                        
+                        
+                        
+                        <div v-for="msg in activeChat.messages" :class="`message-container-${msg.status} d-flex`">
+                            <div class="messages d-flex m-top" :class="msg.status">
+                                <p>{{msg.text}}</p>
+                                <p class="text-ultra-small text-l-grey text-right">{{msg.date}}</p>
+                            </div>
+                        </div>
+
+                        <!-- <div class="message-container-received d-flex">
+                            <div class="messages received d-flex">
+                                <p>Hai portato a spasso il cane?</p>
+                                <p class="text-ultra-small text-l-grey text-right">20/1/2020 Ore 8.33:30</p>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="user-input-chat d-flex">
+                        <i class="far fa-smile text-grey"></i>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <i class="fas fa-microphone text-grey text-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
+</html>

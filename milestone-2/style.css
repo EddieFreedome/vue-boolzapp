@@ -18,8 +18,8 @@
 }
 
 .bg-top{
-    position: absolute;
     background-color: #128C7E;
+    top: 0;
     height: 10vh;
     width: 100%;
     z-index: 0;
@@ -28,8 +28,9 @@
 .content-container{
     min-height: 200px;
     width: 65%;
+    max-width: 65%;
     margin: auto;
-    margin-top: 50px;/*da verificare margine superiore.. staccare solo container, non tutto*/
+    margin-top: 50px; /* da verificare margine superiore.. staccare solo container, non tutto */
     background-color: whitesmoke;
 }
 
@@ -241,7 +242,7 @@
 } */
 
 
-
+/*manca funzionamento overflow auto e flex shrink*/
 
 .user-input-chat{
     align-items: center;

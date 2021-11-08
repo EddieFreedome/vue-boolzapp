@@ -26,8 +26,11 @@ Milestone 4
 ● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i
 contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo
 “mar” rimangono solo Marco e Martina) */
+Vue.config.devtools = true;
+dayjs.extend(window.dayjs_plugin_localizedFormat);
+dayjs.extend(window.dayjs_plugin_relativeTime);
 
-const vm = new Vue({
+new Vue({
     el: '#root',
     data:{
         contacts: [
@@ -153,16 +156,39 @@ const vm = new Vue({
         //funzione per attivare la chat in focus
         onChatClick(chatDaAttivare) {
             this.activeChat = chatDaAttivare;
-            this.scrollToBottom();
-          },
+            // this.scrollToBottom();
+        },
     
         
           //funzione per impostare la chat attiva predefinita
         created() {
-            this.activeChat = this.chatList[0];
+            this.activeChat = this.chatList[0];//come posso invocarla affinche' venga richiamata al caricamento?
+        },
+    
+    
+        onSubmitClick() {
+            // push del messaggio nell'array dei messaggi
+            this.addMessage(this.newMessage, "sent");
+      
+            this.newMessage = "";
+      
+            setTimeout(() => {
+              // push del messaggio nell'array dei messaggi
+              this.addMessage("ok", "received");
+            }, 1000);
           },
-    
-    
+      
+          addMessage(testoMessaggio, stato) {
+            this.activeChat.messages.push({
+              text: testoMessaggio,
+              // date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              date: dayjs().from(dayjs()),
+              status: stato,
+            });
+      
+            // this.scrollToBottom();
+          },
+
     }
 
   })

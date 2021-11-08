@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script
+    src="https://unpkg.com/dayjs@1.8.21/plugin/localizedFormat.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
+    <script>dayjs().format()</script>
+
     <link rel="stylesheet" href="style.css">
     <title>Boolzapp</title>
 </head>
@@ -51,7 +57,7 @@
                         </div>
                     </div>
                     <!-- Container globale Anteprime chat -->
-                    <div class="chat-preview">
+                    <div class="chat-preview overflow">
                         <!-- Singolo container singola anteprima chat -->
                         <div class="user-chat-preview d-flex p-relative"
                             v-for="contatto in getFilteredData()"
@@ -76,7 +82,7 @@
                         </div>
                         <div class="text-preview-container p-relative">
                             <h4>{{activeChat.name}}</h4>
-                            <p class="text-small text-grey">Ultimo accesso il...</p>
+                            <p class="text-small text-grey">{{activeChat.date}}</p>
                         </div>
                         <div class="icon-container text-right">
                             <i class="fas fa-search"></i>
@@ -93,7 +99,7 @@
                         
                         
                         <div v-for="msg in activeChat.messages" :class="`message-container-${msg.status} d-flex`">
-                            <div class="messages d-flex m-top" :class="msg.status">
+                            <div class="messages d-flex" :class="msg.status">
                                 <p>{{msg.text}}</p>
                                 <p class="text-ultra-small text-l-grey text-right">{{msg.date}}</p>
                             </div>
@@ -108,8 +114,10 @@
                     </div>
                     <div class="user-input-chat d-flex">
                         <i class="far fa-smile text-grey"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
-                        <i class="fas fa-microphone text-grey text-right"></i>
+                        <input type="text" placeholder="Scrivi un messaggio" 
+                            v-model="newMessage"
+                            @keyup.enter="onSubmitClick">
+                        <i class="fas fa-microphone text-grey text-right"></i><!--v if per cambiare icona nonappena newMessage===true-->
                     </div>
                 </div>
             </div>

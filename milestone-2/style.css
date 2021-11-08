@@ -110,7 +110,6 @@
     border-right: 1px solid rgba(211, 211, 211, 0.876);
     padding-bottom: 100px;
     background-color: white;
-    overflow: auto;
 }
 
 .user-chat-preview {
@@ -172,9 +171,10 @@
     min-height: 100px;
     max-height: 100%;
     margin-right: 15px;
-    overflow: auto;
     flex-direction: column;
     flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
     
 }
 
@@ -191,6 +191,7 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 20px;
+    
     position: relative;
 }
 
@@ -201,20 +202,23 @@
 }
 
 .messages > p:first-child {
-padding-bottom: 5px;
+    padding-bottom: 5px;
+    padding-right: 50px;
 }
 
 
 .sent{
+    padding-right: 20px;
     margin-right: 50px;
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: rgb(220, 248, 198);
     border-radius: 15px;
 }
 
 .received{
-    padding: 20px;
+    padding-right: 20px;
     margin-left: 50px;
+    margin-top: 20px;
     background-color: white;
     border-radius: 15px;
 }
@@ -326,4 +330,12 @@ padding-bottom: 5px;
 
 .m-top{
     margin-top: 50px;
+}
+
+.overflow{
+    overflow: auto;
+}
+
+.shrink{
+    flex-shrink: 0;
 }
